@@ -1,0 +1,71 @@
+:root {
+    --color-cutebg2: #fff8ff;
+    --color-cutedarkpurple: #c95de6;
+}
+
+.characterBox {
+    position: relative;
+    width: 1240px;
+    height: 1754px;
+    transform: scale(0.3) translate(-810px, -1845px);
+    mask-image: none;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    opacity: 0;
+    will-change: transform;
+    pointer-events: none;
+
+    & > div {
+        pointer-events: auto;
+    }
+
+    & img::selection {
+        background: transparent;
+    }
+    & img::-moz-selection {
+        background: transparent;
+    }
+
+    & div {
+        position: absolute;
+        width: fit-content;
+        transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    & div img {
+        position: relative;
+        max-width: none;
+        image-rendering: crisp-edges;
+    }
+}
+
+#hairLBang,
+#hairRBang {
+    transition: transform 200ms ease-in-out;
+}
+
+#eyeholes,
+#eyelids,
+#mouth {
+    transition: none;
+}
+
+#hairFront {
+    cursor: grab;
+}
+
+#characterButtons {
+    position: absolute;
+    top: 4rem;
+    right: 11rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    button {
+        background-color: var(--color-cutebg2);
+        color: var(--color-cutedarkpurple);
+        padding: 1.5rem;
+        border-radius: 99999px;
+        border: 0;
+    }
+}
